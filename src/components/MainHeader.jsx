@@ -5,9 +5,16 @@ import Modal from "../UI/Modal";
 import { useState, useEffect } from "react";
 import SignUpForm from "./SignUpForm";
 import editIcon from "../assets/edit.svg";
+import userImg from "../assets/article-author4.png";
 
 function MainHeader() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isSignedIn, setIsSignedIn] = useState(false);
+
+  const handleAuth = (value) => {
+    setIsSignedIn(value);
+  };
+
   function closeModal() {
     setIsModalOpen(false);
   }
@@ -38,18 +45,25 @@ function MainHeader() {
           </form>
 
           <div className="align-self-center">
-            <p className="fs-6 text fw-bold m-0">
-              Create account.{" "}
-              <span
-                className="text-primary pointer"
-                onClick={() => {
-                  setIsModalOpen(true);
-                }}
-              >
-                It's free!{"   "}
-              </span>
-              <IoMdArrowDropdown className="fs-4" />
-            </p>
+            {isSignedIn ? (
+              <div className="d-flex align-items-center gap-2">
+                <img src={userImg} alt="user" />
+                <p className="m-0 fw-bold">Siddharth Goyal</p>
+              </div>
+            ) : (
+              <p className="fs-6 text fw-bold m-0">
+                Create account.{" "}
+                <span
+                  className="text-primary pointer"
+                  onClick={() => {
+                    setIsModalOpen(true);
+                  }}
+                >
+                  It's free!{"   "}
+                </span>
+                <IoMdArrowDropdown className="fs-4" />
+              </p>
+            )}
           </div>
         </div>
       </header>
@@ -65,8 +79,8 @@ function MainHeader() {
       )}
 
       {isModalOpen && (
-        <Modal closeModal={closeModal}>
-          <SignUpForm closeModal={closeModal} />
+        <Modal closeModal={closeModal} handleAuth={handleAuth}>
+          <SignUpForm closeModal={closeModal} handleAuth={handleAuth} />
         </Modal>
       )}
     </>

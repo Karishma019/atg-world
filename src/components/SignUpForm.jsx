@@ -5,7 +5,7 @@ import googleIcon from "../assets/googleIcon.png";
 import { IoEyeOutline } from "react-icons/io5";
 import { IoIosCloseCircle } from "react-icons/io";
 
-function SignUpForm({ closeModal }) {
+function SignUpForm({ closeModal, handleAuth }) {
   const [passwordType, setPasswordType] = useState("password");
   const [isSignUp, setIsSignUp] = useState(true);
 
@@ -88,7 +88,12 @@ function SignUpForm({ closeModal }) {
             )}
           </form>
           <div className="d-flex justify-content-between">
-            <button className="btn btn-primary fw-bold rounded-pill my-3 text-md create-btn">
+            <button
+              className="btn btn-primary fw-bold rounded-pill my-3 text-md create-btn"
+              onClick={() => {
+                handleAuth(true);
+              }}
+            >
               {isSignUp ? "Create Account" : "Sign In"}
             </button>
             <button className="btn d-md-none " onClick={handleToggle}>
