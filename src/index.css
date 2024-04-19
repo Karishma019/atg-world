@@ -1,0 +1,213 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+:root {
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+.btn:focus,
+.btn:active {
+  outline: none !important;
+  box-shadow: none !important;
+  --bs-border-width: "0px" !important;
+}
+
+.--bs-border-width {
+  border: none;
+}
+
+.header {
+  background: #fff;
+  height: 72px;
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+}
+
+.cs-container {
+  max-width: 1200px;
+  width: 70%;
+  margin: auto;
+}
+
+.search-form {
+  background: #f2f2f2;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 1.5rem;
+  width: 360px;
+  height: 42px;
+}
+
+.search-input {
+  outline: none;
+  border: none;
+  background: inherit;
+  width: 100%;
+  font-size: 14px;
+}
+
+.main {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("assets/showcase.png") center/cover;
+  height: 440px;
+}
+
+.main-content {
+  height: 100%;
+  color: #fff;
+}
+
+.bg-slate-100 {
+  background: #edeef0;
+}
+
+.text-slate-100 {
+  color: #989899;
+  border: 2px solid #aaaaaa;
+}
+
+.text-slate {
+  color: #989899;
+}
+.active {
+  color: black;
+  font-weight: 500;
+  border-bottom: 2px solid rgb(65, 65, 65);
+}
+
+.navbar-nav {
+  --bs-nav-link-padding-y: 1rem;
+}
+.pointer {
+  cursor: pointer;
+}
+
+.articleHeading > .dropdown-toggle::after {
+  display: none !important;
+}
+
+.sidebar {
+  width: 35% !important;
+}
+
+.sidebar p {
+  font-size: 14px !important;
+}
+
+.follow-btn {
+  border-radius: 2rem;
+  font-size: 12px;
+}
+
+.modalBackdrop {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1100;
+  background-color: rgba(0, 0, 0, 0.774);
+}
+
+.custom-form {
+  z-index: 1200;
+  width: 768px;
+}
+
+.modalContent {
+  z-index: 1200;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: auto;
+  overflow-y: auto;
+}
+
+.text-md {
+  font-size: 14px !important;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-sm {
+  font-size: 11px !important;
+}
+
+.form-control {
+  --bs-border-radius: none !important;
+  --bs-body-bg: #f7f8fa !important;
+}
+
+.form-control:focus {
+  box-shadow: none !important;
+  border-color: #989899;
+}
+
+.bg-cs-green {
+  background-color: #effff4;
+}
+
+.border-outline {
+  border: 1px solid white;
+}
+
+.edit-icon {
+  position: fixed;
+  bottom: 0;
+  z-index: 1100;
+  right: 0;
+}
+.custom-input {
+  background: inherit;
+  outline: none;
+  border: none;
+}
+
+.close {
+  position: absolute;
+  right: 1rem;
+  font-size: 1.4rem;
+  z-index: 100;
+  color: #212529;
+}
+
+.create-btn {
+  width: 100%;
+}
+
+@media screen and (max-width: 500px) {
+  .cs-container {
+    width: 100% !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  :root {
+    font-size: 90% !important;
+  }
+
+  .main {
+    height: 350px;
+  }
+  .custom-form {
+    width: 100vw;
+  }
+  .create-btn {
+    width: 50%;
+  }
+
+  .modalContent {
+    top: 75%;
+  }
+  .custom-form {
+    height: 90vh;
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .cs-container {
+    width: 90%;
+  }
+}
